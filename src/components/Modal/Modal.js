@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 import { Overlay, Modal, LargeImg } from './ModalStyled';
 const modalRoot = document.querySelector('#modal-root');
@@ -34,3 +35,8 @@ export class ModalWindow extends Component {
     );
   }
 }
+
+ModalWindow.propTypes = {
+  largeImg: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
