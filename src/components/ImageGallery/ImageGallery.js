@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import { Gallery } from './ImageGalleryStyled';
 import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
 export const ImageGallery = ({ images, onImageClick }) => {
@@ -7,7 +7,7 @@ export const ImageGallery = ({ images, onImageClick }) => {
     <Gallery>
       {images.map(image => (
         <ImageGalleryItem
-          key={nanoid()}
+          key={image.id}
           image={image}
           onImageClick={onImageClick}
         />
