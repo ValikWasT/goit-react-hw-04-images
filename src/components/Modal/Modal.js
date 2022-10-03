@@ -5,18 +5,16 @@ import { Overlay, Modal, LargeImg } from './ModalStyled';
 const modalRoot = document.querySelector('#modal-root');
 export const ModalWindow = ({ largeImg, onClose }) => {
   useEffect(() => {
-    window.addEventListener('keydown', e => {
+    const onClickEscape = e => {
       if (e.code === 'Escape') {
         onClose();
       }
-    });
+    };
+
+    window.addEventListener('keydown', onClickEscape);
 
     return () => {
-      window.removeEventListener('keydown', e => {
-        if (e.code === 'Escape') {
-          onClose();
-        }
-      });
+      window.removeEventListener('keydown', onClickEscape);
     };
   }, [onClose]);
 

@@ -56,11 +56,14 @@ export const App = () => {
       setPage(page + 1)
     }
   
-  const getInputValue = (value) => {
+  const getInputValue = (val) => {
+    if (val === value) {
+      return
+    }
     setImages([])
     setHitsCount(0)
     setPage(1)
-    setValue(value)
+    setValue(val)
   }
 
   const onImageClick = (largeImg) => {
